@@ -21,6 +21,7 @@ describe Menu do
 	end
 
 	it 'should have a cost equal to the sum of its dishes' do
-		expect(menu.cost).to eq(6.44)
+		menu.add_dish(chicken_burger)
+		expect(menu.cost).to eq(9.43)
 	end
 end

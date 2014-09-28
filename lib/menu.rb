@@ -13,6 +13,8 @@ class Menu
 	end
 
 	def cost
-		dishes.inject{ |sum, n| sum.cost + n.cost }
+		@cost = 0
+		dishes.each{ |dish| @cost += dish.cost}
+		@cost.round(2)	
 	end
 end
