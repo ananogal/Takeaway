@@ -1,11 +1,12 @@
 require './lib/message.rb'
 
 class Order
-	attr_reader :client, :items
+	attr_reader :client, :items, :status, :order_number
 
 	def initialize(client)
 		@client = client
 		@items = []
+		@status = :inProgress
 	end 
 
 	def add_item(item)
@@ -19,6 +20,7 @@ class Order
 	end 
 
 	def checkout(msg)
-		msg.send
+		@status = :done
+		msg.send(client.phone)
 	end
 end
