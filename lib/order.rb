@@ -1,3 +1,5 @@
+require './lib/message.rb'
+
 class Order
 	attr_reader :client, :items
 
@@ -15,4 +17,8 @@ class Order
 		items.each{ |item| @cost += item.cost}
 		@cost.round(2)
 	end 
+
+	def checkout(msg)
+		msg.send
+	end
 end

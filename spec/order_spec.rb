@@ -9,6 +9,7 @@ describe Order do
 	let(:item) {double :item, :meal =>menu, :quantity =>1, :cost =>5.4}
 	let(:item2) {double :item2, :meal =>dish2, :quantity =>5, :cost => 12.5}
 	let(:item3) {double :item3, :meal =>dish, :quantity =>2, :cost => 5.8}
+	let(:message) {double :message}
 
 	let(:order) {Order.new(client)}
 
@@ -29,5 +30,10 @@ describe Order do
  		order.add_item(item2)
  		order.add_item(item3)
  		expect(order.cost).to eq(23.7)
+ 	end
+
+ 	it 'should send a message when checking out' do
+ 		expect(message).to receive(:send)
+ 		order.checkout(message)
  	end
 end
