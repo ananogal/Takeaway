@@ -48,7 +48,7 @@ describe Order do
   		checkoutProcess
   		order.checkout(message)
   		expect{order.checkout(message)}.to raise_error 'This order is already checkout.'
-  	end
+  	end	
 
  	it 'should send a message when checking out' do
  		checkoutProcess
