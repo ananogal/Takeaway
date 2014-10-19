@@ -11,4 +11,9 @@ describe Message do
 		msg = Message.new
 		expect(msg.send(nil)).to be nil
 	end 
+
+	it 'should receive a valid phone number when sending a message' do
+		msg = Message.new
+		expect(msg.send("")).to be nil
+	end
 end

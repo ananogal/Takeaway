@@ -36,16 +36,38 @@ describe Order do
  		expect(order.cost).to eq(23.7)
  	end
 
+ 	it 'should know if it is in progress' do
+  		expect(order.inProgress?).to be(true)
+  	end
+
+  	it 'can only be checkout if it has 1 item in the order' do
+  		expect{order.checkout(message)}.to raise_error 'To checkout you should add some dishes first.'
+  	end	
+
+  	it 'can only checkout if it is in progress' do
+  		checkoutProcess
+  		order.checkout(message)
+  		expect{order.checkout(message)}.to raise_error 'This order is already checkout.'
+  	end
+
  	it 'should send a message when checking out' do
- 		expect(message).to receive(:send)
- 		expect(client).to receive(:phone)
+ 		checkoutProcess
  		order.checkout(message)
  	end
 
  	it 'should change status to done when checking out' do
- 		expect(message).to receive(:send)
- 		expect(client).to receive(:phone)
+ 		checkoutProcess
  		expect{order.checkout(message)}.to change{order.status}
  	end
 
+  	it 'should not be in progress after checkout' do
+  		checkoutProcess
+ 		expect{order.checkout(message)}.to change{order.inProgress?}
+  	end
+
+  	def checkoutProcess
+		allow(message).to receive(:send)
+ 		allow(client).to receive(:phone)
+ 		order.add_item(item)
+  	end
 end

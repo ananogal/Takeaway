@@ -9,7 +9,7 @@ class OrderItem
 	end
 
 	def cost
-		meal.cost * @quantity
+		meal.cost * quantity
 	end
 
 	def name 

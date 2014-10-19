@@ -10,7 +10,7 @@ class Message
 	end
 
 	def send(phone)
-		return nil if phone == nil 
+		return nil if phone == nil || phone.empty?
 		time = Time.now + 3600
 		strTime = time.strftime('%H:%M') 
 		@message = @client.account.messages.create({:to => phone,

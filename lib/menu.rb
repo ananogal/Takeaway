@@ -1,7 +1,6 @@
 class Menu
 
-	attr_reader :name
-	attr_reader :dishes
+	attr_reader :name,:dishes
 
 	def initialize(name, dishes)
 		@name = name
@@ -13,8 +12,6 @@ class Menu
 	end
 
 	def cost
-		@cost = 0
-		dishes.each{ |dish| @cost += dish.cost}
-		@cost.round(2)	
+		@cost = dishes.inject(0){ |memo, dish| memo += dish.cost}.round(2)
 	end
 end
