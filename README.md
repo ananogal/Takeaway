@@ -1,6 +1,6 @@
 # Challage TakeAway
 
-# Objective
+## Objective
 Make a Takeaway system that:
 * Lists dishes with prices
 * Orders:
