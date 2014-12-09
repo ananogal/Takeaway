@@ -17,13 +17,13 @@ Make a Takeaway system that:
 
 * Make sure that your Takeaway class is thoroughly tested and that you use mocks and/or stubs, as necessary to not to send texts when your tests are run
 
-#How to use it
+##How to use it
 Clone the repository and enter the directory.
 
-###Tests
+####Tests
 Enter ``rspec`` in the command line to run tests.
 
-###Code
+####Code
 Enter ``irb`` on command line. <br/>
 
 Require all files "client, messages, menu, dish, order and order_item" ``require './lib/client'``  <br/>
