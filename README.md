@@ -17,6 +17,10 @@ Make a Takeaway system that:
 
 * Make sure that your Takeaway class is thoroughly tested and that you use mocks and/or stubs, as necessary to not to send texts when your tests are run
 
+##Technologies used
+ - Ruby
+ - Rspec
+ 
 ##How to use it
 Clone the repository and enter the directory.
 
