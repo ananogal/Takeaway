@@ -24,14 +24,14 @@ Make a Takeaway system that:
 ##How to use it
 Clone the repository and enter the directory.
 
-####Tests
-Enter ``rspec`` in the command line to run tests.
+####In tests
+Run ``rspec`` on the command line to see tests running and passing.
 
-####Code
-Enter ``irb`` on command line. <br/>
+####In code
+Open ruby console by typing ``irb`` in the command line. <br/>
 
-Require all files "client, messages, menu, dish, order and order_item" ``require './lib/client'``  <br/>
-Create a variable for all classes and interact with then. <br/>
+Require all files "client, messages, menu, dish, order and order_item" by enter code: ``require './lib/client'``  <br/>
+Create variables for all classes and interact with then. <br/>
 If you want to try Twilio you must create you own account and put you secret key and token in 2 environment variables: TWILIO_SID and TWILIO_TOKEN.
 
 
