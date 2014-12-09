@@ -12,6 +12,10 @@ describe Client do
 		expect(client.phone).not_to be nil
 	end 
 
+	it 'phone should be a string' do
+		expect(client.phone).to eq("phone")
+	end
+
 	it 'should be able to place an order' do
 		expect{client.placeOrder}.to change{client.orders.count}.by(1)
 	end

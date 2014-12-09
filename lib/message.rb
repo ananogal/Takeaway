@@ -4,8 +4,8 @@ class Message
 	attr_reader :client
 
 	def initialize
-		account_sid = "ACa5b0cd2c2e773febc4f37fe3238a5cd6"
-		auth_token = "05e4ca98fbb2f999bcf2a385dc270e92"
+		account_sid = ENV['TWILIO_SID']
+		auth_token = ENV['TWILIO_TOKEN']
 		@client = Twilio::REST::Client.new account_sid, auth_token
 	end
 

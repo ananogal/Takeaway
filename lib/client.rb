@@ -6,7 +6,7 @@ class Client
 
 	def initialize(name, phone)
 		@name = name
-		@phone = phone
+		@phone = phone.to_s 
 		@orders = []
 	end
 
